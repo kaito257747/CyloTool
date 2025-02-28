@@ -11,7 +11,7 @@ from rich.style import Style
 import pystyle
 from pystyle import Colors, Colorate
 
-from bubcyz import Bubcyz
+from cylotool import CyloTool
 
 __CHANNEL_USERNAME__ = "CyloToolChannel"
 __GROUP_USERNAME__   = "CyloToolChat"
