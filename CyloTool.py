@@ -11,10 +11,10 @@ from rich.style import Style
 import pystyle
 from pystyle import Colors, Colorate
 
-from cylo import Bubcyz
+from Carl import Bubcyz
 
-__CHANNEL_USERNAME__ = "CyloToolChannel"
-__GROUP_USERNAME__   = "CyloToolChat"
+__CHANNEL_USERNAME__ = "CarlcpmToolchannel"
+__GROUP_USERNAME__   = "CarlcpmToolChat"
 
 def signal_handler(sig, frame):
     print("\n Bye Bye...")
