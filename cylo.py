@@ -18,7 +18,7 @@ class Bubcyz:
             self.auth_token = response_decoded.get("auth")
         return response_decoded.get("error")
  
-       def change_email(self, new_email):
+     def change_email(self, new_email):
         decoded_email = urllib.parse.unquote(new_email)
         payload = {
             "account_auth": self.auth_token,
