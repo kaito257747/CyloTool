@@ -9,13 +9,26 @@ class Bubcyz:
         self.access_key = access_key
 
     def login(self, email, password) -> int:
-        payload = { "account_email": email, "account_password": password }
-        params = { "key": self.access_key }
-        response = requests.post(f"{ENDPOINT_URL}/account_login", params=params, data=payload)
+    payload = {
+        "account_email": email,
+        "account_password": password
+    }
+    params = {"key": self.access_key}
+    response = requests.post(f"{ENDPOINT_URL}/account_login", params=params, data=payload)
+    
+    print("[DEBUG] HTTP STATUS:", response.status_code)
+    print("[DEBUG] RAW RESPONSE:", response.text[:300])  # Show first 300 characters of raw text
+    
+    try:
         response_decoded = response.json()
-        if response_decoded.get("ok"):
-            self.auth_token = response_decoded.get("auth")
-        return response_decoded.get("error")
+    except Exception as e:
+        print("[ERROR] JSON Decode Failed:", str(e))
+        return -999  # Custom error code for invalid JSON
+
+    if response_decoded.get("ok"):
+        self.auth_token = response_decoded.get("auth")
+    
+    return response_decoded.get("error")
 
     def change_email(self, new_email):
         decoded_email = urllib.parse.unquote(new_email)
