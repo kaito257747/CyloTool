@@ -4,7 +4,7 @@ import urllib.parse
 ENDPOINT_URL: str = "https://cylotool1.squareweb.app/api"
 
 class Bubcyz:
-    def init(self, access_key) -> None:
+    def __init__(self, access_key) -> None:
         self.auth_token = None
         self.access_key = access_key
 
