@@ -1,4 +1,5 @@
 import requests
+import urllib.parse
 
 __ENDPOINT_URL__: str = "https://cylotool.squareweb.app/api"
 
