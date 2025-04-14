@@ -18,14 +18,14 @@ class Bubcyz:
             self.auth_token = response_decoded.get("auth")
         return response_decoded.get("error")
  
-   def change_email(self, new_email):
+def change_email(self, new_email):
         decoded_email = urllib.parse.unquote(new_email)
         payload = {
             "account_auth": self.auth_token,
             "new_email": decoded_email
         }
         params = {"key": self.access_key} 
-        response = requests.post(f"{__ENDPOINT_URL__}/change_email", params=params, data=payload)
+        response = requests.post(f"{ENDPOINT_URL}/change_email", params=params, data=payload)
         response_decoded = response.json()
         if response_decoded.get("new_token"):
             self.auth_token = response_decoded["new_token"]
