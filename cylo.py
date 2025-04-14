@@ -1,40 +1,39 @@
 import requests
+import urllib.parse
 
-
-
-__ENDPOINT_URL__: str = "https://cylotool.squareweb.app/api"
+ENDPOINT_URL: str = "https://cylotool1.squareweb.app/api"
 
 class Bubcyz:
-    def __init__(self, access_key) -> None:
+    def init(self, access_key) -> None:
         self.auth_token = None
         self.access_key = access_key
-    
+
     def login(self, email, password) -> int:
         payload = { "account_email": email, "account_password": password }
         params = { "key": self.access_key }
-        response = requests.post(f"{__ENDPOINT_URL__}/account_login", params=params, data=payload)
+        response = requests.post(f"{ENDPOINT_URL}/account_login", params=params, data=payload)
         response_decoded = response.json()
         if response_decoded.get("ok"):
             self.auth_token = response_decoded.get("auth")
         return response_decoded.get("error")
- 
-def change_email(self, new_email):
+
+    def change_email(self, new_email):
         decoded_email = urllib.parse.unquote(new_email)
         payload = {
             "account_auth": self.auth_token,
             "new_email": decoded_email
         }
-        params = {"key": self.access_key} 
+        params = {"key": self.access_key}
         response = requests.post(f"{ENDPOINT_URL}/change_email", params=params, data=payload)
         response_decoded = response.json()
         if response_decoded.get("new_token"):
             self.auth_token = response_decoded["new_token"]
         return response_decoded.get("ok")
-    
+
     def change_password(self, new_password):
         payload = { "account_auth": self.auth_token, "new_password": new_password }
-        params = { "key": self.access_key}
-        response = requests.post(f"{__ENDPOINT_URL__}/change_password", params=params, data=payload)
+        params = { "key": self.access_key }
+        response = requests.post(f"{ENDPOINT_URL}/change_password", params=params, data=payload)
         response_decoded = response.json()
         if response_decoded.get("new_token"):
             self.auth_token = response_decoded["new_token"]
