@@ -201,6 +201,7 @@ if __name__ == "__main__":
             console.print("[bold yellow][bold white](37)[/bold white]: Custom BodyKit           [bold red]10K[/bold red][/bold yellow]")
             console.print("[bold yellow][bold white](38)[/bold white]: Unlock Premium Wheels    [bold red]4.5K[/bold red][/bold yellow]")
             console.print("[bold yellow][bold white](39)[/bold white]: Unlock Toyota Crown      [bold red]2K[/bold red][/bold yellow]")
+            console.print("[bold yellow][bold white](40)[/bold white]: Copy plates              [bold red]2K[/bold red][/bold yellow]")
             console.print("[bold yellow][bold white](0) [/bold white]: Exit From Tool [/bold yellow]")
             
             console.print("[bold red]===============[bold white][ 𝐂𝐏𝐌 ][/bold white]===============[/bold red]")
