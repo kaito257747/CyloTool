@@ -830,7 +830,7 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-                elif service == 40:  # Clonar solo placas entre cuentas
+            elif service == 40:  # Clonar solo placas entre cuentas
                     console.print("[bold cyan]Clonador de placas activado[/bold cyan]")
                     to_email = Prompt.ask("[bold][?] Correo de destino[/bold]")
                     to_password = Prompt.ask("[bold][?] Contraseña de destino[/bold]", password=True)
@@ -839,7 +839,8 @@ if __name__ == "__main__":
                 if resultado: print(Colorate.Horizontal(Colors.rainbow, "✔ Placas clonadas exitosamente"))
                 else:  print(Colorate.Horizontal(Colors.red_to_white, "❌ Error al clonar placas"))
                     check_exit()
+                    continue
                 else:
-                continue
+                    continue
             break
         break              
