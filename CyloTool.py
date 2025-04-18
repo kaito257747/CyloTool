@@ -854,7 +854,5 @@ if __name__ == "__main__":
                     console.print("[bold red]Please try again[/bold red]")
                     sleep(2)
                     continue
-                else:
-                    continue
                 break
             break
