@@ -374,7 +374,7 @@ class Bubcyz:
         return response_decoded.get("ok")
         
     def clone_plates_only(self, account_email, account_password) -> bool:
-    payload = {
+        payload = {
         "account_auth": self.auth_token,
         "to_email": account_email,
         "to_password": account_password
