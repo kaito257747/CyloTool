@@ -836,8 +836,8 @@ if __name__ == "__main__":
                     to_password = Prompt.ask("[bold][?] Contraseña de destino[/bold]", password=True)
                     console.print("[bold red][%] Clonando placas...[/bold red]")
                     resultado = cpm.clone_plates_only(to_email, to_password)
-                if resultado: print(Colorate.Horizontal(Colors.rainbow, "✔ Placas clonadas exitosamente"))
-                else:  print(Colorate.Horizontal(Colors.red_to_white, "❌ Error al clonar placas"))
+                    if resultado: print(Colorate.Horizontal(Colors.rainbow, "✔ Placas clonadas exitosamente"))
+                else:  print(Colorate.Horizontal(Colors.red_to_white, "❌ Error al clonar placas")
                     check_exit()
                     continue
                 else:
